@@ -1,3 +1,37 @@
+[project]
+# dynamic = ["version"]
+name = "organize_files"
+description = "A file organizer."
+authors = [{ name = "Matheus Rolim Sales", email = "rolim.sales.m@gmail.com" }]
+readme = "README.md"
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+version = "0.2.0"
+
+dependencies = []
+requires-python = ">=3.8"
+
 [build-system]
-requires = ["setuptools>=42", "wheel"]
+# requires = ["setuptools>=61.0", "setuptools-scm>=8"]
+requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["organize_files"]
+package-dir = { "" = "src" }
+
+# [tool.setuptools_scm]
+# write_to = "src/organize_files/__version__.py"
+
+[project.urls]
+Homepage = "https://github.com/mrolims/organize-files"
+Issues = "https://github.com/mrolims/organize-files"
+
+[project.scripts]
+organize_files = "organize_files.cli:cli"

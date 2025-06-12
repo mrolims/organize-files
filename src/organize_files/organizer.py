@@ -3,16 +3,14 @@ from typing import Optional
 
 
 class DirectoryCleaner:
-    def __init__(self,
-                 directory: Optional[str] = None) -> None:
+    def __init__(self, directory: Optional[str] = None) -> None:
         if directory is None:
             self.directory = os.getcwd()
         else:
             home = os.path.expanduser("~")
             self.directory = os.path.join(home, directory)
         if not os.path.exists(self.directory):
-            raise FileNotFoundError(
-                f"The directory {self.directory} does not exist.")
+            raise FileNotFoundError(f"The directory {self.directory} does not exist.")
 
     folders_extensions = {
         "TextFiles": ["txt", "md", "log", "csv"],
@@ -24,7 +22,30 @@ class DirectoryCleaner:
         "Videos": ["mp4", "mkv", "avi", "mov", "wmv", "flv", "webm"],
         "Bibtex": ["bib", "bibtex", "ris", "bbl"],
         "Archives": ["zip", "rar", "tar", "gz", "7z", "bz2", "xz", "iso"],
-        "Code": ["py", "ipynb", "js", "ts", "java", "cpp", "c", "h", "html", "css", "json", "xml", "sh", "bat", "rb", "php", "pl", "r", "go", "swift", "kt", "scala"],
+        "Code": [
+            "py",
+            "ipynb",
+            "js",
+            "ts",
+            "java",
+            "cpp",
+            "c",
+            "h",
+            "html",
+            "css",
+            "json",
+            "xml",
+            "sh",
+            "bat",
+            "rb",
+            "php",
+            "pl",
+            "r",
+            "go",
+            "swift",
+            "kt",
+            "scala",
+        ],
         "Applications": ["exe", "msi", "app", "dmg", "apk", "deb", "rpm"],
         "Fonts": ["ttf", "otf", "woff", "woff2"],
         "3DModels": ["obj", "stl", "fbx", "gltf", "glb", "3ds"],
@@ -50,8 +71,7 @@ class DirectoryCleaner:
             # Check if the file is a regular file
             if os.path.isfile(file):
                 # Get the file extension
-                file_extension = file.split(
-                    '.')[-1].lower() if '.' in file else None
+                file_extension = file.split(".")[-1].lower() if "." in file else None
 
                 # Move the file to the appropriate folder based on its extension
                 moved = False

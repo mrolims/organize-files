@@ -32,13 +32,19 @@ After installing the package, you can organize files in a directory easily using
 Organize the current directory:
 
 ```bash
-organize-files
+organize_files
 ```
 
 Organize a specific directory:
 
 ```bash
-organize-files /path/to/directory
+organize_files /path/to/directory
+```
+
+To see the usage instruction, run:
+
+```bash
+organize_files --help
 ```
 
 ### Python API

@@ -49,18 +49,18 @@ organize_files --help
 
 ### Python API
 
-Use the `OrganizeFiles` class directly in your Python script:
+Use the `DirectoryCleaner` class directly in your Python script:
 
 ```python
-from organize_files import OrganizeFiles
+from organize_files import DirectoryCleaner
 
 # Organize current directory
-organizer = OrganizeFiles()
+organizer = DirectoryCleaner()
 organizer.create_folders()
 organizer.move_files()
 
 # Or organize a specific directory (relative to your home folder)
-organizer = OrganizeFiles("Documents/MyFolder")
+organizer = DirectoryCleaner("Documents/MyFolder")
 organizer.create_folders()
 organizer.move_files()
 ```

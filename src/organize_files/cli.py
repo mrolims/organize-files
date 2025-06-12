@@ -1,5 +1,5 @@
 import argparse
-from .organizer import DirectoryCleaner
+from .organize_files import DirectoryCleaner
 
 
 def cli() -> None:

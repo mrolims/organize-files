@@ -1,1 +1,1 @@
-from .organizer import DirectoryCleaner
+from .organize_files import DirectoryCleaner
